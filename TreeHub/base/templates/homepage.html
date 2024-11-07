@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage - TreeHub</title>
+</head>
+<body>
+    <h1>Welcome to your Homepage, {{ user.username }}!</h1>
+    <p>This is the default page after login.</p>
+    <form action="{% url 'logout' %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    
+</body>
+</html>
