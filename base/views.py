@@ -3,11 +3,14 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import update_session_auth_hash
-from .forms import PasswordResetUsernameForm, SecurityQuestionForm, SetNewPasswordForm
-from django.contrib import messages
-from .forms import CustomUserCreationForm
+from .models import UserProfile
+from .forms import (
+    PasswordResetUsernameForm, SecurityQuestionForm, 
+    SetNewPasswordForm, CustomUserCreationForm, UserProfileForm
+)
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib import messages
 
 
 rooms = [
@@ -19,6 +22,9 @@ rooms = [
 
 def home(request):
     return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'about.html')
 
 def virtualpractice(request):
     return render(request, 'virtualpractice.html')
@@ -98,9 +104,24 @@ def password_reset_confirm(request):
             user.save()
             update_session_auth_hash(request, user)
             
-            # Render the template with a success flag
+            
             return render(request, 'password_reset_confirm.html', {'password_reset_success': True})
     else:
         form = SetNewPasswordForm()
         
     return render(request, 'password_reset_confirm.html', {'form': form, 'password_reset_success': False})
+
+
+# Below Operates with account/profile
+@login_required
+def profile_view(request):
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=user_profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your profile has been updated successfully.')
+            return redirect('profile')
+    else:
+        form = UserProfileForm(instance=user_profile)
+    return render(request, 'profile.html', {'form': form})

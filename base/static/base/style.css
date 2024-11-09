@@ -1,3 +1,5 @@
+/*Login Design*/
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -101,4 +103,106 @@ button:hover {
     color: red;
     font-weight: bold;
     margin-bottom: 10px;
+}
+/*Home page*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #32CD32; /* Lime green */
+    padding: 15px;
+    gap: 20px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+    background-color: #808080; /* Grey for each link */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: #666666; /* Darker grey on hover */
+}
+
+.account-section {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.account-section img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Main Content Section */
+.content-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    width: 80%;
+    margin: 20px auto; /* Center-align content container */
+    background-color: #f2f2f2;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.news-section, .suggested, .recently {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.news-section {
+    width: 45%;
+    background-color: #b0b0b0;
+}
+
+.news-item {
+    background-color: #e0e0e0;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.suggested-recently {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.suggested, .recently {
+    background-color: #A06D38;
+    border-radius: 5px;
+}
+
+.suggested h3, .recently h3 {
+    color: white;
+}
+
+.suggested-item, .recently-item {
+    background-color: #6B3A00;
+    padding: 10px;
+    margin: 5px 0;
+    color: white;
+}
+
+/* Welcome Message Section */
+.welcome-message {
+    text-align: center;
+    margin-top: 20px;
+    color: #4CAF50;
 }

@@ -1,0 +1,34 @@
+<!-- Cai is Responsible for this page -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="{% static 'base/style.css' %}">
+</head>
+
+<div class="navbar">
+    <a href="{% url 'homepage' %}">Home</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'virtualpractice' %}">Content</a>
+    <a href="{% url 'messages' %}">Messages</a>
+    <a href="{% url 'progress' %}">Progress</a>        
+    <div class="account-section">
+        <img src="{% static 'base/profile-icon.png' %}" alt="Profile Icon">
+        <a href="{% url 'profile' %}">My Account</a>
+    </div>
+</div>
+
+<body>
+    <h1>{{ user.username }}'s Profile</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>Hey how doing?</p>
+        <button type="submit">Save Changes</button>
+    </form>
+    <a href="{% url 'homepage' %}">Back to Homepage</a>
+</body>
+</html>
