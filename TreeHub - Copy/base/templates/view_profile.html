@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>View Profile</title>
+    <link rel="stylesheet" href="{% static 'base/style.css' %}">
+    <style>
+        .profile-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .profile-container h1 {
+            text-align: center;
+        }
+        .profile-container img {
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+        }
+        .profile-container p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .profile-container .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .profile-container .buttons a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+        .profile-container .buttons a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>{{ user.username }}'s Profile</h1>
+        <img src="{{ userprofile.get_avatar_url }}" alt="Avatar" class="avatar" width="150" height="150">
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Concentration:</strong> {{ userprofile.concentration }}</p>
+        <p><strong>Goal 1:</strong> {{ userprofile.goal1 }}</p>
+        <p><strong>Goal 2:</strong> {{ userprofile.goal2 }}</p>
+        <p><strong>Goal 3:</strong> {{ userprofile.goal3 }}</p>
+        <p><strong>Introduction:</strong> {{ userprofile.introduction }}</p>
+
+        <div class="buttons">
+            <a href="{% url 'profile' %}">Edit Profile</a>
+            <a href="{% url 'homepage' %}">Back to Homepage</a>
+        </div>
+    </div>
+</body>
+</html>

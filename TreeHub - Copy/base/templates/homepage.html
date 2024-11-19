@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>TreeHub - Homepage</title>
     <link rel="stylesheet" href="{% static 'base/style.css' %}">
+<<<<<<< HEAD
 </head>
 <body>
 
@@ -18,12 +19,38 @@
     <!-- The top navigation bar -->
     <div class="navbar">
         <a href="{% url 'homepage' %}">Home</a>
+=======
+    <style>
+        .navbar .account-section {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .account-section a {
+            margin-right: 10px;
+        }
+        .navbar .account-section img {
+            width: 30px;  /* 调整头像宽度 */
+            height: 30px; /* 调整头像高度 */
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The top navigation bar -->
+    <div class="navbar">
+        <a href="#">Home</a>
+>>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
         <a href="{% url 'about' %}">About</a>
         <a href="{% url 'virtualpractice' %}">Content</a>
         <a href="{% url 'messages' %}">Messages</a>
         <a href="{% url 'progress' %}">Progress</a>        
         <div class="account-section">
+<<<<<<< HEAD
             <img src="{% static 'base/profile-icon.png' %}" alt="Profile Icon">
+=======
+            <a href="{% url 'view_profile' %}"><img src="{{ user.userprofile.get_avatar_url }}" alt="Profile Icon"></a>
+>>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
             <a href="{% url 'profile' %}">My Account</a>
         </div>
     </div>
@@ -44,9 +71,26 @@
             <div class="recently">
                 <h3>Recently</h3>
                 <div class="recently-item">statement::...</div>
+<<<<<<< HEAD
             </div>
         </div>
     </div>
 
+=======
+                
+            </div>
+
+
+        <h1>Welcome to TreeHub, {{ user.username }}!</h1>
+        <p>This is the default page after login.</p>
+        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+
+
+        </div>
+    </div>
+>>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
 </body>
 </html>

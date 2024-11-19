@@ -12,14 +12,29 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 
+<<<<<<< HEAD
 # Static room definitions
+=======
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from .forms import UserProfileForm
+from django.contrib.auth.views import LogoutView
+
+
+
+>>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
 rooms = [
     {'id': 1, 'name': 'Terms and Services.'},
     {'id': 2, 'name': 'Privacy Policy'},
     {'id': 3, 'name': 'Mission Statement'}
 ]
 
+<<<<<<< HEAD
 # View Definitions
+=======
+
+>>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
 def home(request):
     return render(request, 'home.html')
 
@@ -32,7 +47,11 @@ def virtualpractice(request):
 def progress(request):
     return render(request, 'progress.html')
 
+<<<<<<< HEAD
 def messages(request):
+=======
+def custom_messages_view(request):
+>>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
     return render(request, 'messages.html')
 
 def signup(request):
@@ -103,6 +122,7 @@ def password_reset_confirm(request):
             user.set_password(new_password)
             user.save()
             update_session_auth_hash(request, user)
+<<<<<<< HEAD
             messages.success(request, 'Your password has been reset successfully.')
             return redirect('login')  # Redirect to the login page after reset
     else:
@@ -122,3 +142,34 @@ def profile_view(request):
     else:
         form = UserProfileForm(instance=user_profile)
     return render(request, 'profile.html', {'form': form})
+=======
+            
+            
+            return render(request, 'password_reset_confirm.html', {'password_reset_success': True})
+    else:
+        form = SetNewPasswordForm()
+        
+    return render(request, 'password_reset_confirm.html', {'form': form, 'password_reset_success': False})
+
+
+# Below Operates with account/profile
+@login_required
+def profile_view(request):
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=request.user.userprofile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your profile has been updated successfully.')
+            return redirect('profile')
+    else:
+        form = UserProfileForm(instance=request.user.userprofile)
+    
+    return render(request, 'profile.html', {'form': form})
+
+@login_required
+def view_profile(request):
+    return render(request, 'view_profile.html', {'userprofile': request.user.userprofile})
+
+class CustomLogoutView(LogoutView):
+    next_page = 'home'
+>>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
