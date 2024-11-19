@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 /*Login Page*/
-=======
-/*Login Design*/
-
->>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -108,7 +103,6 @@ button:hover {
     font-weight: bold;
     margin-bottom: 10px;
 }
-<<<<<<< HEAD
 
 /* New Styles for Homepage Layout */
 .navbar {
@@ -121,43 +115,12 @@ button:hover {
 .navbar a {
     color: white;
     padding: 10px 20px;
-=======
-/*Home page*/
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
-
-/* Navbar styling */
-.navbar {
-    display: flex;
-    justify-content: center;
-    background-color: #32CD32; /* Lime green */
-    padding: 15px;
-    gap: 20px;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.navbar a {
-    background-color: #808080; /* Grey for each link */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
->>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
     text-decoration: none;
     font-weight: bold;
 }
 
 .navbar a:hover {
-<<<<<<< HEAD
     background-color: #45a049;
-=======
-    background-color: #666666; /* Darker grey on hover */
->>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
 }
 
 .account-section {
@@ -173,15 +136,10 @@ body {
     margin-right: 10px;
 }
 
-<<<<<<< HEAD
-=======
-/* Main Content Section */
->>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
 .content-container {
     display: flex;
     justify-content: space-around;
     padding: 20px;
-<<<<<<< HEAD
     background-color: #f2f2f2;
     width: 100%;
 }
@@ -196,29 +154,12 @@ body {
     color: white;
     font-size: 18px;
     margin-bottom: 10px;
-=======
-    width: 80%;
-    margin: 20px auto; /* Center-align content container */
-    background-color: #f2f2f2;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.news-section, .suggested, .recently {
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.news-section {
-    width: 45%;
-    background-color: #b0b0b0;
->>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
 }
 
 .news-item {
     background-color: #e0e0e0;
     padding: 10px;
     margin: 5px 0;
-<<<<<<< HEAD
     color: #333;
     font-size: 16px;
 }
@@ -227,34 +168,18 @@ body {
     width: 40%;
     display: flex;
     flex-direction: column;
-=======
-}
-
-.suggested-recently {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
->>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
 }
 
 .suggested, .recently {
     background-color: #A06D38;
-<<<<<<< HEAD
     padding: 10px;
     margin-bottom: 10px;
-=======
-    border-radius: 5px;
->>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
 }
 
 .suggested h3, .recently h3 {
     color: white;
-<<<<<<< HEAD
     font-size: 18px;
     margin-bottom: 10px;
-=======
->>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
 }
 
 .suggested-item, .recently-item {
@@ -262,16 +187,5 @@ body {
     padding: 10px;
     margin: 5px 0;
     color: white;
-<<<<<<< HEAD
     font-size: 16px;
 }
-=======
-}
-
-/* Welcome Message Section */
-.welcome-message {
-    text-align: center;
-    margin-top: 20px;
-    color: #4CAF50;
-}
->>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
