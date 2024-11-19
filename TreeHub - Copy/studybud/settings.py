@@ -137,11 +137,3 @@ CSRF_USE_SESSIONS = True
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
-=======
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-
-STATIC_URL = '/static/'
->>>>>>> 23b3b29e0b0595e8cfb085a49b69dc21e58669bb
