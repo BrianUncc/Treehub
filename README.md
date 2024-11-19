@@ -1,2 +1,2 @@
-# treehub
+# Treehub Group Project
 group Proj
